@@ -6,7 +6,6 @@ import './Completed.dart';
 class HomePage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return HomePageState();
   }
 }
@@ -17,7 +16,6 @@ class HomePageState extends State<HomePage> {
   int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       body: _myPage[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
