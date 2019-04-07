@@ -13,7 +13,7 @@ class HomePage extends StatefulWidget {
 
 class HomePageState extends State<HomePage> {
   TodoProvider todo = TodoProvider();
-  final _myPage = [Task(), Completed()];
+  final List<Widget> _myPage = [Task(), Completed()];
   int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -21,12 +21,8 @@ class HomePageState extends State<HomePage> {
     return Scaffold(
       body: _myPage[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        onTap: onTabTapped,
         currentIndex: _currentIndex,
-        onTap: (int index) {
-          setState(() {
-            _currentIndex = index;
-          });
-        },
         items: [
           new BottomNavigationBarItem(
               icon: Icon(Icons.menu), title: Text("Task")),
@@ -35,5 +31,11 @@ class HomePageState extends State<HomePage> {
         ],
       ),
     );
+  }
+
+  void onTabTapped(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
   }
 }

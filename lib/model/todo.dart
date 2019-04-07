@@ -16,10 +16,10 @@ class Todo {
     this.done = done;
     this.id = id;
   }
-  factory Todo.fromMap(Map<String, dynamic> json) => new Todo(
-        id: json[columnId],
-        title: json[columnTitle],
-        done: json[columnDone] == 1,
+  factory Todo.fromMap(Map<String, dynamic> map) => new Todo(
+        id: map[columnId],
+        title: map[columnTitle],
+        done: map[columnDone] == 1,
       );
   Map<String, dynamic> toMap() {
     var map = <String, dynamic>{
